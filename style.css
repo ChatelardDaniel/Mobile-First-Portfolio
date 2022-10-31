@@ -23,6 +23,7 @@ li{
 body{
     background: var(--secondary);
     overflow-x: hidden;
+    font-family: 'Rubik', sans-serif;
 }
 
 .button{
@@ -51,9 +52,23 @@ input,textarea{
 
 
 /* fonts */
+@font-face {
+    font-family: 'Rubik', sans-serif;
+    src: url('assets/fonts/Rubik_Regular.ttf');
+}
 
+h1,h2,h3,h4{
+    color: #dddbff;
+    font-weight: normal;
+}
 
+p,a,li{
+    color: #9893d8;
+}
 
+h1,h3{
+    font-size: 1.2em;
+}
 
 /* mobile styles */
 
