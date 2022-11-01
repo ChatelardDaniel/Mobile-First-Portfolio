@@ -1,0 +1,85 @@
+/* CSS pour Mobile */
+:root{
+    font-size: 10px;
+    --bordure: 1px solid var(--primary);
+    --primary: blue;
+    --secondary: yellow;
+}
+
+/********** reset **********/
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+/********** fin reset **********/
+
+h1{
+    font-size: 1.6rem;
+}
+
+p{
+    font-size: 1em;
+}
+
+header img{
+    width: 100vw;
+    object-fit: cover;
+}
+
+main{
+    padding: 8px;
+}
+
+footer{
+    background-color: var(--primary);
+    text-align: center;
+    color: var(--secondary);
+}
+
+/* Pour les écrans dont la largeur est supérieur à 600px */
+@media screen and (min-width: 600px) {
+    /* Ici, le css s'appliquera aux écrans de 600px minimum */
+    /* Mettre les section sur 2 colonnes */
+    :root{
+        font-size: 14px;
+    }
+    main{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    main section{
+        flex: 1;
+        min-width: 45%;
+        margin: 10px;
+        padding: 10px;
+        border: var(--bordure);
+    }
+}
+
+/* Pour les écrans dont la largeur est supérieur à 800px */
+@media screen and (min-width: 800px) {
+    /* Ici, le css s'appliquera aux écrans de 800px minimum */
+    :root {
+        font-size: 16px;
+    }
+    main{
+        width: 780px;
+        margin: auto;
+    }
+}
+
+/* Pour les écrans dont la largeur est supérieur à 1200px */
+@media screen and (min-width: 1200px) {
+    /* Ici, le css s'appliquera aux écrans de 1200px minimum */
+    
+    main{
+        width: 100vw;
+    }
+    main section{
+        min-width: 25%
+    }
+}
