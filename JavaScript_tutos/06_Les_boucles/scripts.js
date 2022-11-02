@@ -1,21 +1,45 @@
-// Intéraction avec l'utilisateur
-// alert("message");
-// prompt("Quel nombre ?");
-// confirm("Etes vous sûr ?");
+// Les boucles
 
-/********** Les variables **********/
-// On crée la variable nombre et on lui met la valeur 3
-let nombre = 3;
+// La boucle for
+for(let compteur = 0; compteur <= 10; compteur++){
+    console.log(compteur);
+}
 
-var autreNombre = 2;
+// La boucle for compter de 5 en 5
+for(let compteur1 = 0; compteur1 <= 100; compteur1 += 5){
+    console.log(compteur1);
+}
 
-nombre = 25;
+// Exemple pour un mot de passe
+// let pass = "azerty"
 
-let texte ="Bonjour";
+// while(pass != "brouette"){
+//     pass = prompt("Entrez le mot de passe");
+// }
 
-autreNombre = 15.36;
+// Pour les tableaux, ancien façon
+let clients = ["Robert", "Bruno", "Pascale","Séverine"];
+console.table(clients);
 
-// Ecrire dans la console
-console.log("Brouette");
-console.log(nombre);
-console.log(texte);
+for(let ligne = 0; ligne < clients.length; ligne++){
+    console.log(clients[ligne]);
+}
+
+// Pour les tableaux, nouvelle façon
+for(let ligne in clients){
+    console.log(clients[ligne]);
+}
+
+// Avec for of
+for(let valeur of clients){
+    console.log(valeur);
+}
+
+//forEach, permet de récupérer la valeur et l'index si on le veux
+clients.forEach((valeur, index) => {
+    console.log(valeur, index);
+});
+//forEach, permet de récupérer la valeur et l'index si on le veux, si l'on ajoute tableau il afficher un Array[] dans la console.
+clients.forEach((valeur, index, tableau) => {
+    console.log(tableau);
+});
