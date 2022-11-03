@@ -1,21 +1,46 @@
-// Intéraction avec l'utilisateur
-// alert("message");
-// prompt("Quel nombre ?");
-// confirm("Etes vous sûr ?");
+// Les fonctions
 
-/********** Les variables **********/
-// On crée la variable nombre et on lui met la valeur 3
-let nombre = 3;
+// commentaite jsdoc
+/**
+ * Cette fonction fonction fait un console.log qui dit bonjour
+ * @param {string} prenom Prénom de la personne
+ */
 
-var autreNombre = 2;
+// Création de la fonction direBonjour
+function direBonjour() {
+    console.log("Bonjour")
+}
 
-nombre = 25;
+// Appel de la fonction direBonjour
+direBonjour();
 
-let texte ="Bonjour";
+// Création de la fonction direBonsoir avec paramètre de fonction
+function direBonsoir(prenom) {
+    console.log(`Bonsoir ${prenom}`)
+}
 
-autreNombre = 15.36;
+// Appel de la fonction direBonsoir avec paramètre de fonction
+direBonsoir("Daniel");
 
-// Ecrire dans la console
-console.log("Brouette");
-console.log(nombre);
-console.log(texte);
+// Création de la fonction direBonsoir avec paramètre de fonction et un paramètre par défaut "Benoit"
+function direBonsoir(prenom = "Benoit") {
+    console.log(`Bonsoir ${prenom}`)
+}
+
+// Appel de la fonction direBonsoir avec paramètre de fonction et un paramètre par défaut "Benoit"
+direBonsoir()
+
+// Récupérer quelque chose via une fonction
+/**
+ * Cette fonction addition deux nombres
+ * @param {number} nb1
+ * @param {number} nb2
+ * @returns number
+ */
+function addition(nb1, nb2){
+    let total = nb1 + nb2;
+    return total;// return, retourne une valeur et stop l'exécution de la fonction. S'il y a du code après le return, il ne sera jamais exécuté.
+}
+
+let resultat = addition(5, 12);
+console.log(resultat);
