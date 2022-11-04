@@ -1,21 +1,27 @@
-// Intéraction avec l'utilisateur
-// alert("message");
-// prompt("Quel nombre ?");
-// confirm("Etes vous sûr ?");
+// L'opérateur ternaire ? :
 
-/********** Les variables **********/
-// On crée la variable nombre et on lui met la valeur 3
-let nombre = 3;
+let nombre = -5;
+let texte;
+// if(nombre >= 0){
+//     texte = ("Le nombre est positif ou null");
+// }else{
+//     texte = ("Le nombre est négatif");
+// }
 
-var autreNombre = 2;
-
-nombre = 25;
-
-let texte ="Bonjour";
-
-autreNombre = 15.36;
-
-// Ecrire dans la console
-console.log("Brouette");
-console.log(nombre);
+texte = (nombre >= 0) ? "Le nombre est positif ou null" : "Le nombre est négatif";
 console.log(texte);
+
+// changer 
+let baliseH2 = document.querySelector("#titre1");
+
+baliseH2.addEventListener("click", function(){
+    
+    // if(this.innerText === "Sous titre"){
+    //     this.innerText = "Sous titre cliqué";
+    // }else{
+    //     this.innerText = "Sous titre";
+    // }
+
+    // en ternaire
+    this.innerText = (this.innerText === "Sous titre") ? "Sous titre cliqué" : "Sous titre";
+});
