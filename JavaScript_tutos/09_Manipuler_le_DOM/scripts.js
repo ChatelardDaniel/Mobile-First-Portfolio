@@ -1,4 +1,4 @@
-// Manipuler le DOM Partie1
+/********** Manipuler le DOM Partie1 **********/ 
 
 // aller chercher un ou des éléments dans le document.
 // par la balise
@@ -22,4 +22,36 @@ for(let row of classeRow){
     console.log(row);
     //changer la couleur du texte par exemple
     row.style.color = "red";
+}
+
+/********** Manipuler le DOM Partie2 **********/ 
+// écouter le click sur les balises h2 et changer la couleur lorsque l'on click dessus.
+for(let baliseH2 of balisesH2){
+        baliseH2.addEventListener("click", () => {
+        baliseH2.style.color = "green";
+    })
+
+    // Avec un appel de la fonction changeCouleur sur baliseLi
+    baliseLi.addEventListener("click", changeCouleur)
+
+    // Ajouter une bordure avec la fonction ajoutBordures, lorsque j'entre avec la sourie sur l'élément.
+    baliseLi.addEventListener("mouseenter", ajoutBordures);
+
+    // Enlever une bordure avec la fonction retraitBordures,lorsque je sors avec la sourie de l'élément.
+    baliseLi.addEventListener("mouseleave", retraitBordures);
+}
+
+// via une fonction universel, je peut changer la couleur d'un élément.
+function changeCouleur(){
+    this.style.color = "blue";
+}
+
+function ajoutBordures(){
+    this.style.border = "2px solid black";
+    this.removeEventListener("mouseenter", ajoutBordures);
+}
+
+function retraitBordures(){
+    this.style.border = "none";
+    this.removeEventListener("mouseleave", retraitBordures);
 }
