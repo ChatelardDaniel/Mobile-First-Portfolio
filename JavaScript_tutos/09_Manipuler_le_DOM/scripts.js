@@ -1,21 +1,25 @@
-// Intéraction avec l'utilisateur
-// alert("message");
-// prompt("Quel nombre ?");
-// confirm("Etes vous sûr ?");
+// Manipuler le DOM Partie1
 
-/********** Les variables **********/
-// On crée la variable nombre et on lui met la valeur 3
-let nombre = 3;
+// aller chercher un ou des éléments dans le document.
+// par la balise
+let balisesH2 = document.querySelectorAll("h2");
+console.log(balisesH2);
 
-var autreNombre = 2;
+// aller chercher la deuxième balise li
+let baliseLi = document.querySelector("li:nth-child(2)");
+console.log(baliseLi);
 
-nombre = 25;
+// aller chercher une class
+let classeRow = document.querySelectorAll(".row")
+console.log(classeRow);
 
-let texte ="Bonjour";
+// aller chercher un élément avec un id
+let titre2 = document.querySelector("#titre2");
+console.log(titre2);
 
-autreNombre = 15.36;
-
-// Ecrire dans la console
-console.log("Brouette");
-console.log(nombre);
-console.log(texte);
+// avec une boucle for sur la classeRow
+for(let row of classeRow){
+    console.log(row);
+    //changer la couleur du texte par exemple
+    row.style.color = "red";
+}
