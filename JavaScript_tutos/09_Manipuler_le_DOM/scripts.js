@@ -55,3 +55,17 @@ function retraitBordures(){
     this.style.border = "none";
     this.removeEventListener("mouseleave", retraitBordures);
 }
+
+/********** Manipuler le DOM Partie3 **********/ 
+let baliseP = document.querySelector("#titre2 + p");
+
+// changer le texte de mon élément h2
+baliseP.previousElementSibling.innerText = "Texte modifié";
+
+// Manipuler les parents
+baliseLi = document.querySelector("li:last-child");
+console.log(baliseLi.parentElement);
+
+// depuis la balise p, je veux aller chercher la section parente
+let section1 = baliseP.parentElement.previousElementSibling;
+console.log(section1);
