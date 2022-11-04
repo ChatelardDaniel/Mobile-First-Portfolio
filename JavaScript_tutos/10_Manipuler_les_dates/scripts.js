@@ -1,21 +1,28 @@
-// Intéraction avec l'utilisateur
-// alert("message");
-// prompt("Quel nombre ?");
-// confirm("Etes vous sûr ?");
+// Manipuler les dates
+// Déclarer la date d'aujourd'hui
+let maDate = new Date();
 
-/********** Les variables **********/
-// On crée la variable nombre et on lui met la valeur 3
-let nombre = 3;
+// Déclarer une autre date
+let autreDate = new Date("2022-01-12 14:25:14");
 
-var autreNombre = 2;
+// Janvier égal à zéro, le dimanche aussi
+console.log(autreDate);
 
-nombre = 25;
+// calculer le temps entre deux dates temps en millisecondes
+let temps = maDate - autreDate;
+console.log(temps);
 
-let texte ="Bonjour";
+// Dans 1 jour il y a 24h * 60min * 60s * 1000 = 86400000ms
+// arrondir avec Math.floor()
+let jours = Math.floor(temps/86400000);
+console.log(jours);
 
-autreNombre = 15.36;
+// Reste temps - (nbre de jours * durée)
+let reste = temps - jours * 8640000;
+// ou faire avec modulo
+reste = temps % 86400000;
+console.log(reste);
 
-// Ecrire dans la console
-console.log("Brouette");
-console.log(nombre);
-console.log(texte);
+// savoir les heures 60min * 60s * 1000 = 3600000ms
+let heures = Math.floor(reste / 3600000);
+console.log(heures);
