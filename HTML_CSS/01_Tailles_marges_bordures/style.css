@@ -1,0 +1,29 @@
+#box1{
+    height: 50px;
+    width: 300px;
+    border: 10px solid blue;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 80px;
+}
+
+#box2{
+    border: 5px solid red;
+    width: 500px;
+    height: 150px;
+    padding: 15px;
+    box-sizing: border-box;
+    /* Si on met un marge extérieur en haut et que l'élément au dessus à une marge en bas. */
+    margin-top: 50px; 
+    /* Les marges se fusionne elles ne s'additionne pas, elle prendra la valeurs la plus grande, donc celle de #box1 */
+}
+
+#span1{
+    border: 2px solid green;
+    /* width, ne fonctionne pas sur une balise inline, il faut la transformer en inline-block */
+    width: 100px;
+    /* Transformer en inline-block la span pour pouvoir augmenter sa largeur 'width' */
+    display: inline-block;
+    height: 40px;
+    box-sizing: border-box;
+}
