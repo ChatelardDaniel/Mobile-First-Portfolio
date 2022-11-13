@@ -1,0 +1,10 @@
+img{
+    width: 100%;
+    vertical-align: middle;/* enlève les lignes blanches sous les images */
+}
+section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 10px;
+}
