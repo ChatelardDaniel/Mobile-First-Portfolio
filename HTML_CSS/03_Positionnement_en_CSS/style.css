@@ -1,0 +1,48 @@
+#section1{
+    background-color: red;
+    height: 200px;
+}
+
+#section2{
+    background-color: green;
+    height: 200px;
+}
+
+#section2 div{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+#section3{
+    background-color: blue;
+    height: 200px;
+    position: relative;
+}
+
+#div2{
+    /* Position relative est par rapport à sa position de base */
+    /* Position absolute est par rapport à body car body à la positionnement relative par défaut. */
+    position: relative;
+    top: 25px;
+    left: 10px;
+}
+
+#section3 div{
+    border: 1px solid red;
+    width: 50px;
+    height: 50px;
+    /* Position absolute est par rapport à son parent'#section3' qui est en position relative */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);/* permet de centrer le carré */
+}
+
+#div3{
+    position: fixed;/* positionné par rapport à la fenêtre */
+    bottom: 5px;
+    right: 5px;
+    background-color: #839c49;
+}
