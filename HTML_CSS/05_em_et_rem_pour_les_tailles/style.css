@@ -1,0 +1,15 @@
+:root{
+    font-size: 10px;
+}
+
+p{
+    font-size: 1.5rem;
+}
+
+p > span{
+    font-size: 2rem;
+}
+
+
+/* Le em est proportionnel sur body ou son parent */
+/* Le rem est proportionnel à :root,et n'est jamais hérité du parent */
