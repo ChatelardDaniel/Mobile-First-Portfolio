@@ -1,0 +1,50 @@
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+}
+
+nav {
+    background-color: lightgrey;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+nav li {
+    display: inline;
+    margin: 10px;
+}
+
+main {
+    display: inline-block;
+    width: 70%;
+    height: 500px;
+    border-left: solid 1px lightgrey;
+}
+
+article {
+    padding: 20px;
+}
+
+aside {
+    display: inline-block;
+    width: 25%;
+    background-color: #b0b0ff;
+    height: 500px;
+    vertical-align: top;
+}
+
+section {
+    padding: 10px;
+}
+
+footer {
+    text-align: center;
+    background-color: #000634;
+    color: white;
+    margin-top: 20px;
+    padding: 10px;
+}
