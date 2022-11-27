@@ -1,0 +1,20 @@
+#conteneur {
+    /* Avec 'Flex les éléments vont ce mettre les un à la suite des autres, et la largeur de chaque élément sera en fonction du contenu de chaque élément */
+    display: flex;
+}
+
+.un {
+    background-color: #f90;
+}
+
+.deux {
+    background-color: #f60;
+}
+
+.trois {
+    background-color: #f00;
+}
+
+.quatre {
+    background-color: #c36;
+}

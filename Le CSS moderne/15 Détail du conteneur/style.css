@@ -1,0 +1,55 @@
+#conteneur {
+    /* Le conteneur reste de type block en gris, seul le contenu devient 'flex' */
+    background-color: #ccc;
+    /* Avec 'Flex les éléments vont ce mettre les un à la suite des autres, et la largeur de chaque élément sera en fonction du contenu de chaque élément */
+    display: flex;
+    /* En mettant 'column' les élément vont prendre le largeur du conteneur et ce mettre les uns en dessous des autres. */
+    flex-direction: column;/* Par défaut 'flex-direction est a 'row*/
+}
+
+#conteneur-column-reverse {
+    /* Le conteneur reste de type block en gris, seul le contenu devient 'flex' */
+    background-color: #ccc;
+    /* Avec 'Flex les éléments vont ce mettre les un à la suite des autres, et la largeur de chaque élément sera en fonction du contenu de chaque élément */
+    display: flex;
+    /* En mettant 'column-reverse' les élément vont prendre le largeur du conteneur et ce mettre les uns en dessous des autres mais inversé. */
+    flex-direction: column-reverse;/* Par défaut 'flex-direction est a 'row*/
+}
+
+#conteneur-row {
+    /* Le conteneur reste de type block en gris, seul le contenu devient 'flex' */
+    background-color: #ccc;
+    /* Avec 'Flex les éléments vont ce mettre les un à la suite des autres, et la largeur de chaque élément sera en fonction du contenu de chaque élément */
+    display: flex;
+    /* En mettant 'row' les élément vont ce placer à gauche. */
+    flex-direction: row;/* Par défaut 'flex-direction est a 'row*/
+}
+
+#conteneur-row-reverse {
+    /* Le conteneur reste de type block en gris, seul le contenu devient 'flex' */
+    background-color: #ccc;
+    /* Avec 'Flex les éléments vont ce mettre les un à la suite des autres, et la largeur de chaque élément sera en fonction du contenu de chaque élément */
+    display: flex;
+    /* En mettant 'row-reverse' les élément vont commencer à droite. */
+    flex-direction: row-reverse;
+}
+
+.un {
+    background-color: #f90;
+}
+
+.deux {
+    background-color: #f60;
+}
+
+.trois {
+    background-color: #f00;
+}
+
+.quatre {
+    background-color: #c36;
+}
+
+div[class] {
+    padding: 25px;
+}

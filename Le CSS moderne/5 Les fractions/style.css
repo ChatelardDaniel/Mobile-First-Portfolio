@@ -1,0 +1,28 @@
+#grille-Fractions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    /* repeat() premier paramètre est égal au nombre de répétition, le second paramètre est égal à la taille. */
+    grid-gap: 15px;
+    /* Raccourci */
+    background-color: yellow;
+    width: 400px;
+    height: 300px;
+    margin: auto;
+}
+
+.impaire {
+    background-color: red;
+}
+
+.paire {
+    background-color: black;
+    color: white;
+}
+
+/* on vise toutes les 'div' qui ont un attribut 'class'. */
+div[class] {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 10px;
+}

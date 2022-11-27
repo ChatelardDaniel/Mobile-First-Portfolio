@@ -1,0 +1,20 @@
+#grille-colonnes {
+    display: grid;
+    grid-template-columns: 200px 100px 50px 20%;
+}
+
+.impaire {
+    background-color: red;
+}
+
+.paire {
+    background-color: black;
+    color: white;
+}
+
+/* on vise toutes les 'div' qui ont un attribut 'class'. */
+div[class] {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 10px;
+}

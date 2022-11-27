@@ -1,0 +1,26 @@
+#grille-Manipulation {
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-template-rows: 50px auto 75px;
+    /* auto, remplace si je ne met pas de valeur, prend la valeur qui reste du fait que j'ai mis une hauteur. */
+    background-color: yellow;
+    width: 400px;
+    height: 300px;
+    margin: auto;
+}
+
+.impaire {
+    background-color: red;
+}
+
+.paire {
+    background-color: black;
+    color: white;
+}
+
+/* on vise toutes les 'div' qui ont un attribut 'class'. */
+div[class] {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 10px;
+}

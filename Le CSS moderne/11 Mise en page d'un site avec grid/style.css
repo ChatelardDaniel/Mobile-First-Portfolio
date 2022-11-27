@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+    font-size: 20px;
+}
+
+.site {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    /* Mise en place des zones */
+    grid-template-areas:
+    "header header"
+    "nav article"
+    "footer footer";
+    width: 500px;
+    margin: auto;
+    height: 100vh;
+}
+
+header {
+    background-color: #f60;
+    text-align: center;
+    grid-area: header;/* donner un nom à chaque balise */
+}
+
+nav {
+    background-color: #030;
+    text-align: center;
+    grid-area: nav;
+}
+
+article {
+    background-color: #36f;
+    text-align: center;
+    grid-area: article;
+}
+
+footer {
+    background-color: #f3c;
+    text-align: center;
+    grid-area: footer;
+}

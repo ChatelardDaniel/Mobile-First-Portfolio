@@ -1,0 +1,41 @@
+#conteneur {
+    /* Le conteneur reste de type block en gris, seul le contenu devient 'flex' */
+    background-color: #ccc;
+    /* Avec 'Flex les éléments vont ce mettre les un à la suite des autres, et la largeur de chaque élément sera en fonction du contenu de chaque élément */
+    display: flex;
+    /* En mettant 'column' les élément vont prendre le largeur du conteneur et ce mettre les uns en dessous des autres. */
+
+    /* Mettre les éléments à la ligne */
+    flex-wrap: wrap;/* Par défaut 'nowrap'*/
+}
+
+#conteneur-wrap-reverse {
+    /* Le conteneur reste de type block en gris, seul le contenu devient 'flex' */
+    background-color: #ccc;
+    /* Avec 'Flex les éléments vont ce mettre les un à la suite des autres, et la largeur de chaque élément sera en fonction du contenu de chaque élément */
+    display: flex;
+    /* En mettant 'column' les élément vont prendre le largeur du conteneur et ce mettre les uns en dessous des autres. */
+
+    /* Mettre les éléments à la ligne */
+    flex-wrap: wrap-reverse;/* Par défaut 'nowrap'*/
+}
+
+.un {
+    background-color: #f90;
+}
+
+.deux {
+    background-color: #f60;
+}
+
+.trois {
+    background-color: #f00;
+}
+
+.quatre {
+    background-color: #c36;
+}
+
+div[class] {
+    padding: 25px;
+}

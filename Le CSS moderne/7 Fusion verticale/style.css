@@ -1,0 +1,46 @@
+.impaire {
+    background-color: red;
+}
+
+.paire {
+    background-color: black;
+    color: white;
+}
+
+/* on vise toutes les 'div' qui ont un attribut 'class'. */
+div[class] {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 10px;
+}
+
+/********** Fusion-Horizontale **********/
+#grille-Fusion-verticale {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /* repeat() premier paramètre est égal au nombre de répétition, le second paramètre est égal à la taille. */
+    grid-gap: 15px;
+    /* Raccourci */
+    background-color: yellow;
+    width: 400px;
+    height: 300px;
+    margin: auto;
+}
+
+/* on cible l'enfant numéro 1 de la 'div' qui a un attribut 'class' . */
+div[class]:nth-child(1) {
+    background-color: blue;
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    /* ou on peux écrire, 'span 2', pour dire sur 2 colonnes*/
+}
+
+/* on cible l'enfant numéro 3 de la 'div' qui a un attribut 'class' . */
+div[class]:nth-child(3) {
+    background-color: orange;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;/* Fusion verticale début */
+    grid-row-end: span 3;/* Fusion verticale fin */
+}
