@@ -22,14 +22,22 @@
     <!-- Activer babel en mettant type="text/babel" dans la balise script.-->
     <script type="text/babel">
         // JSX
-        let firstname = 'Jules'
+        let firstname = 'Jules';
+
+        // le code html ne sera pas exécuté, il faudra forcer l'affichage avec  dangerouslySetInnerHTML={{__html: description}}
+        let description = 'Lorem <strong>ipsum dolor sit amet</strong>';
+        
+        //La syntaxe JSX, bien que très proche de la syntaxe HTML, présente pourtant des différences expliquées par le fait que JSX n'est rien d'autre qu'une extension de JavaScript. Certains mots réservés vont nous forcer à modifier légèrement nos habitudes, alors qu'une certaine liberté nous est offerte en écrivant du JSX, en particulier sur les aspects des balises auto-fermantes et sur la protection contre les failles XSS.
+
+        // JSX offre une protection par défaut pour les attaques de type XSS : Cross-Site Scripting. Pour pallier ce type d'attaques, toute chaîne interpolée par React en JSX est échappée par défaut, et tout code qui s'y trouverait est par conséquent rendu inerte. Il existe un moyen d’interpréter du code HTML en JSX en le passant explicitement dans la prop dangerouslySetInnerHTML, mais il convient d'être certain d'avoir nettoyé la source qui sera affichée avec cette prop pour être sûr qu'elle ne contient pas de code malveillant.
         
         const el = (
-            <div>
+            <React.Fragment>
                 <h1>Interpolation</h1>
                 <p>{firstname.toUpperCase()}</p>
                 <input type="text" value={firstname}/>
-            </div>
+                <p dangerouslySetInnerHTML={{__html: description}}></p>
+            </React.Fragment>
         );
         ReactDOM.render(el, document.getElementById('root'));
     </script>
