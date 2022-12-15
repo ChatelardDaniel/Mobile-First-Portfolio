@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Dom virtuel avec le JSX - interpolation</title>
+    <!-- Lien cdn babel pour utiliser le JSX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.20.6/babel.js"
+        integrity="sha512-k99uQ0ucYP1eFec0sPTnIJ0vDmJOy274k7qCKCtGb2HkcaPTTjZooCqOIvEuSjKgpqDY78YIK7y+vKL7hrIwFQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Lien cdn react -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <!-- Activer babel en mettant type="text/babel" dans la balise script.-->
+    <script type="text/babel">
+        // JSX
+        let firstname = 'Jules'
+        
+        const el = (
+            <div>
+                <h1>Interpolation</h1>
+                <p>{firstname.toUpperCase()}</p>
+                <input type="text" value={firstname}/>
+            </div>
+        );
+        ReactDOM.render(el, document.getElementById('root'));
+    </script>
+</body>
+
+</html>
