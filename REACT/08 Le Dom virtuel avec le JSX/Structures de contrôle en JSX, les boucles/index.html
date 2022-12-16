@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Dom virtuel avec le JSX - interpolation</title>
+    <!-- Lien cdn babel pour utiliser le JSX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.20.6/babel.js"
+        integrity="sha512-k99uQ0ucYP1eFec0sPTnIJ0vDmJOy274k7qCKCtGb2HkcaPTTjZooCqOIvEuSjKgpqDY78YIK7y+vKL7hrIwFQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Lien cdn react -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <style>
+        body {font-family: system-ui;}
+        figure {margin: 6rem 0;}
+        div {width: 500px; margin: auto;}
+        img {border-radius: 5px;}
+        figcaption {color: gray; font-style: italic; text-align: center;}
+    </style>
+</head>
+
+<!--
+    Il est également possible de créer une boucle en React en utilisant les fonctions mises à disposition par JavaScript. Il est néanmoins fortement recommandé de placer une clé unique sur chaque élément d'une boucle pour que React puisse répercuter dans le DOM toutes les modifications qui pourraient advenir sur le tableau de données original.
+-->
+<body>
+    <div id="root"></div>
+    <!-- Activer babel en mettant type="text/babel" dans la balise script.-->
+    <script type="text/babel">
+
+        let data = [
+            {
+                "id": 1,
+                "title": "lorem ipsus dolor",
+                "url": "https://picsum.photos/id/1025/500/300"
+            },
+            {
+                "id": 2,
+                "title": "lorem ipsus dolor",
+                "url": "https://picsum.photos/id/1040/500/300"
+            },
+            {
+                "id": 3,
+                "title": "lorem ipsus dolor",
+                "url": "https://picsum.photos/id/1011/500/300"
+            },
+            {
+                "id": 4,
+                "title": "lorem ipsus dolor",
+                "url": "https://picsum.photos/id/1002/500/300"
+            },
+            {
+                "id": 5,
+                "title": "lorem ipsus dolor",
+                "url": "https://picsum.photos/id/100/500/300"
+            }
+        ];
+
+        // Avec .map, on transforme les données brut en code JSX que je vais interpoler dans la const el.
+        let pictures = data.map(pic => {
+            return (
+                <figure key={pic.id}>
+                    <img src={pic.url} alt={pic.title}/> 
+                    <figcaption>{pic.title}</figcaption>  
+                </figure>
+            )
+        });
+
+        const el = (
+            <React.Fragment>
+                <h2>Structures de contrôle en JSX, les boucles.</h2>
+                <div>
+                    {pictures}
+                </div>
+            </React.Fragment>
+        );
+        ReactDOM.render(el, document.getElementById('root'));
+    </script>
+</body>
+
+</html>
