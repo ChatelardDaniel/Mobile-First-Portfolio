@@ -1,31 +1,73 @@
-import React from 'react';
-import './App.css';
-import RedSquare from './Components/RedSquare';
-import BlueSquare from './Components/BlueSquare';
+import React, { useState } from 'react';
+import styles from './App.module.css';
+import Toast from './Components/Toast';
 
 function App() {
+  const [showInfo, setShowInfo] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showWarning, setShowWarning] = useState(false);
+  const [showDanger, setShowDanger] = useState(false);
+
+  const handleCloseInfo = () => setShowInfo(false);
+  const handleCloseSuccess = () => setShowSuccess(false);
+  const handleCloseWarning = () => setShowWarning(false);
+  const handleCloseDanger = () => setShowDanger(false);
+
+  const toggleVisibility = (event) => {
+    switch(event.target.id) {
+      case "Info": setShowInfo(!showInfo); break;
+      case "Success": setShowSuccess(!showSuccess); break;
+      case "Warning": setShowWarning(!showWarning); break;
+      case "Danger": setShowDanger(!showDanger); break;
+      default: setShowInfo(!showInfo);
+    }
+  }
+
   return (
-    <div className="App">
-      <RedSquare />
-      <BlueSquare />
+    <div className={styles.App}>
+      <div className={styles.Actions}>
+        <button type="button" id="Info" onClick={toggleVisibility}>Afficher toast "Info"</button>
+        <button type="button" id="Success" onClick={toggleVisibility}>Afficher toast "Success"</button>
+        <button type="button" id="Warning" onClick={toggleVisibility}>Afficher toast "Warning"</button>
+        <button type="button" id="Danger" onClick={toggleVisibility}>Afficher toast "Danger"</button>
+      </div>
+
+      <div className={styles.Toasts}>
+        {showInfo 
+          ? <Toast
+            alertType="Info"
+            label="toast Info"
+            onClose={handleCloseInfo}
+          />
+          : null}
+
+        {showSuccess 
+          ? <Toast
+            alertType="Success"
+            label="toast Success"
+            onClose={handleCloseSuccess}
+          />
+          : null}
+
+        {showWarning 
+          ? <Toast
+            alertType="Warning"
+            label="toast Warning"
+            onClose={handleCloseWarning}
+          />
+          : null}
+
+        {showDanger 
+          ? <Toast
+            alertType="Danger"
+            label="toast Danger"
+            onClose={handleCloseDanger}
+          />
+          : null}
+      </div>
+
     </div>
   );
 }
 
 export default App;
-/*
-    Par défaut, même si les styles sont importés par différents composants sous la forme de fichiers CSS séparés, ils sont tout de même fusionnés dans un seul fichier au moment du build. Cette fusion peut causer des conflits de styles sur des classes qui porteraient le même nom.
-
-    Plusieurs solutions de CSS in JS, comme CSS Modules, existent pour créer un cloisonnement entre les styles de différents composants, ce qui permet de réutiliser les noms de classes sans risquer un conflit.
-
-    Côté CSS, il sera simplement nécessaire de renommer les fichiers en [nom].module.css. Côté composant, nous allons devoir effectuer quelques modifications :
-
-    il faut utiliser le nom 'styles' et faire l'import de cette façon:
-    import styles from './RedSquare.module.css';
-
-    const RedSquare = () => {
-      changer le nom dans la className par interpolation avec le nom styles.Square
-      return <div className={styles.Square}/>;
-    }
-
-*/
